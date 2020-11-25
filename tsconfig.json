@@ -1,0 +1,25 @@
+{
+  "compileOnSave": true,
+  "compilerOptions": {
+    "module": "commonjs",
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "esModuleInterop": true,
+    "target": "es2017",
+    "noImplicitAny": true,
+    "sourceMap": true,
+    "moduleResolution": "node",
+    "outDir": "dist",
+    "baseUrl": ".",
+    "lib": ["es2017"],
+    "pretty": true,
+    "paths": {
+      "*": [
+        "node_modules/*",
+        "lib/types/*",
+        "lib/log/*",
+      ]
+    }
+  },
+  "include": ["src/**/*"]
+}
