@@ -9,6 +9,6 @@ export enum Types {
 }
 
 export enum Env {
-  dev = 'development',
-  pro = 'production',
+  Dev = 'development',
+  Pro = 'production',
 }

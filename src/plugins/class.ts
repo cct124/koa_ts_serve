@@ -2,10 +2,13 @@ import { SwaggerRouter as Swagger } from 'koa-swagger-decorator';
 import { IRouterOptions } from 'koa-router';
 import { SwaggerOptions } from '../types';
 import { Env } from '../config';
-import { getIPAdress } from './utils'
+import { Serve } from '../config';
+import { logConsole } from './log4js';
+
+
 
 /**
- * 继承自koa-swagger-decorator 的 SwaggerRouter 类 swagger 方法会更具env变量判断是否生成swagger文档
+ * 继承自koa-swagger-decorator的SwaggerRouter类，swagger方法会根据env变量判断是否生成swagger文档
  */
 export class SwaggerRouter<StateT = any, CustomT = {}> extends Swagger {
   constructor(opts?: IRouterOptions, swaggerOpts?: SwaggerOptions) {
@@ -13,9 +16,8 @@ export class SwaggerRouter<StateT = any, CustomT = {}> extends Swagger {
   }
 
   swagger(options: SwaggerOptions = {}) {
-    if (process.env.NODE_ENV === Env.dev) {
-      console.log(getIPAdress());
-      
+    if (process.env.NODE_ENV === Env.Dev) {      
+      logConsole.info(`swagger docs avaliable at http://localhost:${Serve.port}${options.prefix}${options.swaggerHtmlEndpoint}`)
       super.swagger(options)
     }
   }

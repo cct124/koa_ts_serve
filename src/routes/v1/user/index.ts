@@ -1,10 +1,11 @@
+import formidable from 'formidable';
+import _path from 'path';
 import { request, summary, body, query, tags, middlewares, formData, path, description, orderAll, prefix, Context, } from 'koa-swagger-decorator';
 import { Res, ResErr } from '../../../plugins/response';
 import { valiBody, valiQuery, valiPath } from '../../../plugins/validate';
 import { Parameters } from '../../../types'
 import { Err, Regexps, Types } from '../../../config';
-import formidable from 'formidable';
-import _path from 'path';
+
 
 const tag = tags(['User']);
 const userSchema: Parameters = {

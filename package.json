@@ -1,25 +1,17 @@
 {
-  "name": "koa_ts_serve",
+  "name": "club_tree_serve",
   "version": "1.0.0",
-  "description": "基于koa和TypeScript的node服务",
+  "private": true,
+  "description": "club_tree_serve",
   "scripts": {
     "serve": "cross-env NODE_ENV=development node dist/main.js --inspect",
     "watch:node": "nodemon --watch dist --exec npm run serve -L",
     "watch:ts": "tsc -w -p tsconfig.json",
-    "dev": "concurrently -k -p \"{name}:\" -n \"TypeScript,Node\" -c \"yellow.bold,cyan.bold,green.bold\" \"npm run watch:ts\" \"npm run watch:node\"",
+    "dev": "concurrently -k -p \"{name}\" -n \"T,N\" -c \"gray.italic,gray.italic,green.bold\" \"npm run watch:ts\" \"npm run watch:node\"",
     "build": "rm -rf dist/* && tsc",
     "start": "cross-env NODE_ENV=production node dist/main.js"
   },
-  "keywords": [
-    "node",
-    "serve",
-    "TS",
-    "TypeScript",
-    "Koa",
-    "Swagger"
-  ],
-  "author": "Jane",
-  "license": "MIT",
+  "author": "jane",
   "devDependencies": {
     "@types/formidable": "^1.0.31",
     "@types/koa": "^2.11.6",

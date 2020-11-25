@@ -13,7 +13,6 @@ import { logHttp } from '../plugins/log4js';
 export function koaUseMiddlewares(dire: string, plugins: string[]): Function {
 
   const middleware: { default: Function[] }[] = plugins.map(i => `${dire}/${i}`).map(file => require(path.resolve(__dirname, file)));
-
   return function () {
     middleware.forEach(mode => {
       mode.default.forEach(fn => {
